@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WM_TestProject.Models;
 using WM_TestProject.Repository;
 
 namespace WM_TestProject.Controllers
@@ -10,15 +11,30 @@ namespace WM_TestProject.Controllers
     public class ProductController : Controller
     {
         readonly IProductRepository _repository;
-
+       
         public ProductController(IProductRepository repository)
         {
             _repository = repository;
         }
-        // GET: Product
+
+
+        // Return list of products
         public ActionResult Index()
         {
             return View(_repository.GetAllProducts());
+        }
+
+        // GET: 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Product p)
+        {
+            _repository.AddProduct(p);
+            return RedirectToAction("Index");
         }
     }
 }

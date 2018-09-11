@@ -26,7 +26,8 @@ namespace WM_TestProject.Repository
 
         public void AddProduct(Product p)
         {
-            throw new NotImplementedException();
+            db.Products.Add(p);
+            db.SaveChanges();
         }
 
 
