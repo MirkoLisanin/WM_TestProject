@@ -23,8 +23,7 @@ namespace WM_TestProject.Controllers
         {
             return View(_repository.GetAllProducts());
         }
-
-        // GET: 
+         
         [HttpGet]
         public ActionResult Create()
         {
@@ -34,6 +33,18 @@ namespace WM_TestProject.Controllers
         public ActionResult Create(Product p)
         {
             _repository.AddProduct(p);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            return View(_repository.GetProductById(id));
+        }
+        [HttpPost]
+        public ActionResult Edit(Product p)
+        {
+            _repository.EditProduct(p);
             return RedirectToAction("Index");
         }
     }

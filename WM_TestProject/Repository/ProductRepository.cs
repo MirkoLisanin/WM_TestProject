@@ -16,12 +16,13 @@ namespace WM_TestProject.Repository
 
         public Product GetProductById(int id)
         {
-            throw new NotImplementedException();
+            return db.Products.Find(id);
         }
 
         public void EditProduct(Product p)
         {
-            throw new NotImplementedException();
+            db.Entry(p).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
         }
 
         public void AddProduct(Product p)
