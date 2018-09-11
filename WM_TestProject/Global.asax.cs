@@ -13,6 +13,8 @@ namespace WM_TestProject
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            UnityConfig.RegisterComponents();
         }
     }
 }
