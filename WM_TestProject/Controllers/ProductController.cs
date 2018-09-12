@@ -17,8 +17,6 @@ namespace WM_TestProject.Controllers
             _repository = repository;
         }
 
-
-        // Return list of products
         public ActionResult Index()
         {
             return View(_repository.GetAllProducts());

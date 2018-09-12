@@ -7,30 +7,33 @@ using WM_TestProject.Models;
 namespace WM_TestProject.Repository
 {
     public class ProductRepository : IProductRepository
-    {
-        ProductContext db = new ProductContext();
+    {        
+        IProductContext _db;
+        public ProductRepository(IProductContext db)
+        {
+            _db = db;
+        }
         public IList<Product> GetAllProducts()
         {
-            return db.Products.ToList();
+            return _db.Products.ToList();
         }
 
         public Product GetProductById(int id)
         {
-            return db.Products.Find(id);
+            return _db.Products.Find(id);
         }
 
         public void EditProduct(Product p)
         {
-            db.Entry(p).State = System.Data.Entity.EntityState.Modified;
-            db.SaveChanges();
+            _db.Entry(p).State = System.Data.Entity.EntityState.Modified;
+            _db.SaveChanges();
         }
 
         public void AddProduct(Product p)
         {
-            db.Products.Add(p);
-            db.SaveChanges();
+            _db.Products.Add(p);
+            _db.SaveChanges();
         }
-
 
     }
 }
