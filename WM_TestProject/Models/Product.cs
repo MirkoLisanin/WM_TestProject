@@ -7,7 +7,7 @@ namespace WM_TestProject.Models
     using System.Data.Entity.Spatial;
 
     [Table("Product")]
-    public partial class Product : IProduct
+    public partial class Product
     {
         public int ProductId { get; set; }
 
