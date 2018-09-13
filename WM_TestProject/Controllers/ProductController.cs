@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,8 +18,9 @@ namespace WM_TestProject.Controllers
             _repository = repository;
         }
 
+        [HttpGet]
         public ActionResult Index()
-        {
+        {            
             return View(_repository.GetAllProducts());
         }
          
@@ -44,6 +46,33 @@ namespace WM_TestProject.Controllers
         {
             _repository.EditProduct(p);
             return RedirectToAction("Index");
+        }
+
+        //json test method
+        //just to be sure that i get list of products in JSON format
+        public JsonResult Test()
+        {            
+            IList<Product> listOfProducts = _repository.GetAllProducts();
+
+            string idString = Request.QueryString["id"];
+            if (string.IsNullOrWhiteSpace(idString))
+            {
+                return Json(listOfProducts, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                int id = int.Parse(idString);
+                Product pr = listOfProducts.FirstOrDefault(p => p.ProductId == id);
+                if (pr != null)
+                {
+                    return Json(pr, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new Product(), JsonRequestBehavior.AllowGet);
+                }
+            }
+            
         }
     }
 }

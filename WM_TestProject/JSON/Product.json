@@ -1,0 +1,56 @@
+[
+  {
+    "ProductId": 1,
+    "ProductName": "First Product",
+    "ProductDescription": "First Description",
+    "Category": "First Category",
+    "Manufacturer": "First Manufacturer",
+    "Supplier": "First Supplier",
+    "Price": 123.0000
+  },
+  {
+    "ProductId": 2,
+    "ProductName": "Second Product",
+    "ProductDescription": "Second Description",
+    "Category": "Second Category",
+    "Manufacturer": "Second Manufacturer",
+    "Supplier": "Second Supplier",
+    "Price": 321.0000
+  },
+  {
+    "ProductId": 3,
+    "ProductName": "Third Product",
+    "ProductDescription": "Third Description",
+    "Category": "Third Category",
+    "Manufacturer": "Third Manufacturer",
+    "Supplier": "Third Supplier",
+    "Price": 456.00
+  },
+  {
+    "ProductId": 4,
+    "ProductName": "4th Product",
+    "ProductDescription": "4th Description",
+    "Category": "4th Category",
+    "Manufacturer": "4th Manufacturer",
+    "Supplier": "4th Suppier",
+    "Price": 654.00
+  },
+  {
+    "ProductId": 5,
+    "ProductName": "5th Product",
+    "ProductDescription": "5th Description",
+    "Category": "5th Category",
+    "Manufacturer": "5th Manufacturer",
+    "Supplier": "5th Supplier",
+    "Price": 678.0000
+  },
+  {
+    "ProductId": 6,
+    "ProductName": "asdf",
+    "ProductDescription": "asd",
+    "Category": "asd",
+    "Manufacturer": "asd",
+    "Supplier": "asd",
+    "Price": 123.00
+  }
+]

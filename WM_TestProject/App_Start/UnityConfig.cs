@@ -12,10 +12,14 @@ namespace WM_TestProject
         public static void RegisterComponents()
         {
 			var container = new UnityContainer();
-            
-            container.RegisterType<IProductRepository, ProductRepository>();
+                        
             container.RegisterType<IProductContext, ProductContext>();
-            container.RegisterType<IProduct, Product>();
+
+            // change the RegisterType for JSON
+            container.RegisterType<IProductRepository, ProductRepository>();
+            //container.RegisterType<IProductRepository, JSONProductRepository>();
+
+
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
