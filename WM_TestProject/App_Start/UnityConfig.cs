@@ -16,10 +16,10 @@ namespace WM_TestProject
             container.RegisterType<IProductContext, ProductContext>();
 
             //change the RegisterType to JSONProductRepository or
-            container.RegisterType<IProductRepository, ProductRepository>();
+            //container.RegisterType<IProductRepository, ProductRepository>();
 
             //uncomment the following line to use JSONProductRepository and comment above line
-            //container.RegisterType<IProductRepository, JSONProductRepository>();
+            container.RegisterType<IProductRepository, JSONProductRepository>();
 
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
